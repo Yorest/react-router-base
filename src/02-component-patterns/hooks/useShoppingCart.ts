@@ -17,39 +17,20 @@ export const useShoppingCart = () => {
       count: number;
       product: Product;
     }) => {
-      setShoppingCart((oldShoppingCartState) => {
-        const productInCart: ProductInCart = oldShoppingCartState[product.id] || {
-          ...product,
-          count: 0,
-        };
-  
-        if (Math.max(productInCart.count + count, 0) > 0) {
-          productInCart.count += count;
+      setShoppingCart((oldShoppingCartState) => {  
+        if (count === 0) {
+          // desestruturamos la propiedad computada y el resto
+          //          ▼                      ▼
+          const { [product.id]: toDelete, ...rest } = oldShoppingCartState;
           return {
-            ...oldShoppingCartState,
-            [product.id]: productInCart,
+            ...rest,
           };
         }
   
-        //Borrar producto del carrito
-        const { [product.id]: toDelete, ...rest } = oldShoppingCartState;
         return {
-          ...rest,
+          ...oldShoppingCartState,
+          [product.id]: { ...product, count },
         };
-  
-        // if (count === 0) {
-        //   // desestruturamos la propiedad computada y el resto
-        //   //          ▼                      ▼
-        //   const { [product.id]: toDelete, ...rest } = oldShoppingCartState;
-        //   return {
-        //     ...rest,
-        //   };
-        // }
-  
-        // return {
-        //   ...oldShoppingCartState,
-        //   [product.id]: { ...product, count },
-        // };
       });
     };
 
