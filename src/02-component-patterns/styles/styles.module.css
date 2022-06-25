@@ -7,7 +7,7 @@
     padding-bottom: 5px;
     width: 250px;
     margin-right: 5px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .productImg {
@@ -59,4 +59,10 @@
 
 .buttonAdd:hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.disabled{
+  border-color: grey !important;
+  border-left: 1px solid white !important;
+  color: gray !important;
 }
