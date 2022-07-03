@@ -1,0 +1,60 @@
+[
+  {
+    "type": "input",
+    "name": "firstName",
+    "placeholder": " write your first name",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "minLenght",
+        "value":5
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "name": "lastName",
+    "placeholder": " write your last name",
+    "label": "Last Name",
+    "value": ""
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "username@domain.com",
+    "label": "email",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "name": "favoriteGame",
+    "label": "Favorite Game",
+    "value": "",
+    "options": [
+      {
+        "value": "superSmach",
+        "label": "Super Smach"
+      },
+      {
+        "value": "metalGear",
+        "label": "Metal Gear"
+      },
+      {
+        "value": "residentEvil",
+        "label": "Resident Evil"
+      }
+    ]
+  }
+]
